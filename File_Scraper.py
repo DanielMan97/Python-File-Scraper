@@ -6,12 +6,12 @@ import os
 
 
 
-root = "http://rpi.edu/dept/arc/training/latex/resumes/"
+root = "enter url you want to scrape"
 response = urllib.request.urlopen(root)
 soup = BeautifulSoup(response.read(), "html.parser")
 
 for elem in soup.select("a[href]"):
-    if ".tex" in elem['href']:
+    if "enter file extension of what you want to download e.g .pdf .doc etc" in elem['href']:
         wget.download(urljoin(root, elem['href']))
 
 
